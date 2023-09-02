@@ -1,0 +1,41 @@
+Apache Kafka 
+örn: datawarehousei ile uygulama suncuu arasıdkai haberleşmeyi sağlar
+#bir sistemin diger bir sistemle 10ms altında veri akıs hizmeti sunabilir 
+#linkedin tarafından geliştirilmiş
+#distributed streaming platform olarak da adlandırılır(dagıtık duraksız iletim ortamı)
+#FTHA(fault tolerance and high avaibility)
+# Kafka verilerin bu kaynak sistemlerden, analiz sistemlerine aktarımı için biçilmiş kaftan.
+💡 Kafka bir veritabanı değildir, veriler sınırlı zamanda hataya dayanıklı bir şekilde saklanır, varsayılan süre bir haftadır.
+-Tüm veriyi tek bir dosyadan okumaktansa farklı dosyalardan okumak hem daha performanslı hem de hataya karşı daha töleranslı.
+Bu sebeple topicler bir veya birden fazla bölümden (Partition) meydana gelirler
+ 
+ 
+topics: kayıtların bir akışından başka bir şey değildir.key value olarak tutulur ,offsset indexleridir
+producers:seçilen topice göre veriyi üretir eder
+consumers:seçilen topice abone olur ve veriyi tüketir.
+broker: mesaj alışverşinden sorumlu olan kafka instancelarına broker denir standole veya bir kümenin parçası olarak kullanılabilir
+partitions:producersdan gelen veriyi parçalara ayırarak gönderir.
+
+
+zookeeper kafka ile çalışır kafkanı clusterlarını kontrol eder
+statusune bakan bakımını yapan araç 
+
+
+
+-*-*-
+
+bin/zookeeper-server-start.sh config/zookeeper.properties //zookeeper başlatmak
+bin/kafka-server-start.sh config/server.properties //kafka başlatmak
+
+
+bin/kafka-server-start.sh config/kraft/server.properties // server başlat
+bin/kafka-topics.sh --create --topic topicname --bootstrap-server localhost:9092 //topic oluşturme
+./kafka-topics.sh --list --bootstrap-server localhost:9092 //topiclerin listesi
+
+./kafka-console-producer.sh --broker-list localhost:9092 --topic deptopic //producer süreç başlatmak
+
+crtl+c ile çıkılıp consume edilir
+
+./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic quickstart-events --from-beginning
+
+

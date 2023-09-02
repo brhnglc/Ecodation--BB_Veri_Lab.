@@ -1,0 +1,18 @@
+Veri gölü
+-yapıalndırılmış ve yapılandırılmamış gibi her veriyi toplar(garbage in)
+-veri bilimi ve ml ile çıktı oluşur (garbage out yapıyoruz)
+
+lambda-arch
+-data streming ve batch dataların handiling?
+
+data lake sıkıntıları
+-atomiklik yok 
+
+Delta Lake
+-bronze (çig yutma) Raw
+-silver (filterelenmiş,temizlenmiş,artırılmış) düzeltilmiş
+-işletme düzeyinde toplamlar (tüketime hazır spark veya presto kullanılabilir)
+-> kalite artıyor aşagıya doğru
+
+
+

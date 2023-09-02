@@ -1,0 +1,72 @@
+-docker run -d --name ibbdebfirstapp -p 80:80 nginx -> 8080 portunda nginx çalıştırtık
+	*kontainter oluşturmak
+	*-d kontainteri arkada çalıştırmak
+	*-name isim -p port 
+   	*ngnix web sunucusu
+
+-curl localhost -> localhost karşlıgı html
+
+-docker ps
+	*çalışan kontainterler
+	*ps -a hepsini gösterir durgun aktif
+
+-docker pause cointaner_name
+	*cointaner pause eder
+-docker unpause cointaner_name
+
+-docker stop cointaner_name
+	*cointaner tamamen kapatmak 
+-docker start cointaner_name
+
+-docker rm cointaner_name
+	*siler
+-docker run -d -p 80:80 --restart always --name app_name ngnix
+	*çöktügü zaman kendi kendine yeniden başlar
+	
+-docker run -d --name sunucu1 alpine sleep 3000
+	*3000 lik arada bir boşluk oluşturmak
+
+-for number in {1..3}; do docker run -d --name sunucu${number} alpine sleep 3000; done
+	*for dongüsü ile oluşturmak
+
+-docker rm $(docker ps -a -q)
+	*aktif olmanyanları sildi
+	*docker rm -f ... şeklinde force zorla silebiliriz hepsini
+	
+-docker image ls 
+	*image listesi
+	*docker image ls | grep dock //dock keywordünü içeren imageleri getir
+	
+-docker build -t image_name
+	*image oluşturma
+	**Dockerfile
+-docker tag image_name image_name:tag_name
+	*tag degiştirme(lastets muhbbaeti)
+	
+-docker login 
+
+-docker tag image_name docker_site_name(brhnglc)/image_name:new_tag_name
+-docker push brhnglc/image_name:tag1
+
+java1.8
+
+yml-> yaml aint markup language ;key-value şeklinde verilir version:'3' gibi
+docker-compose.yml ; çoklu üretim için
+docker_compose up -d ;-d dersken terminali meşgul etmeden arkadan çalışır docker-compose down ilede kapatabilirz bu durumda
+
+------------yml file exp----------- bozuk ama 
+version : '3'
+services:
+    database:
+      image: mariadb
+      volumes:
+        - veritabani: /var/lib/mysql  -> bu kısım ile database sabit kalır down etsek bile saklanır
+      environment:
+          MYSQL_ROOT_PASSWORD: burhangul
+    adminer:
+      image: adminer
+      ports:
+---------------------------------------------
+
+
+

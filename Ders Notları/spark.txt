@@ -1,0 +1,48 @@
+-google cloud,locale(terminal+jupyter),clouedra,databrickse yükleyebiliriz
+pyspark 100 kat daha hızlı pandastan
+
+hadoop : dagıtık dosya sistemi
+map reduce:hadoop cluseter üzeirne inşa edilmiş paralel progmralma stili
+spark: mapreduce berklet stili
+
+spark üstünde çalışır(2);
+	RDD:resilient ditributed datasets
+	DataFrame:
+
+python-scala-java destegi var
+
+spark contenxt  giriş noktası
+
+nums = sc.parallelize([1,2,3]) //rdd oluşturmak
+
+num.maps(lamda x:x*x) // her değer için işlem yaptırma
+
+even = squares.filter(lambda x: x%2==0) çıktı 4 olur 
+
+lines = sc.textFile("file.log")
+lines.filter(lambda s:"ERROR" in s).count()
+
+nums.collect() //rdd leri yerel koleksiyon alma
+
+nums.take(2) ilk 2 eleamnı çevir
+
+nums.count() eleman sayısı alma 
+
+nums.reduce(lambda x,y:x+y) ögeleri ilişkisel fonk ile birleştirme sonuc 6
+
+nums.saveAsTextFile("hdfs://file.txt") 
+
+(cat,1) (cat,2) (dog,1)
+
+reducebykey(lambda x,y:x+y) - cat,3-dog,1
+groupbykey()  - cat[1,2]-dog[1]
+sortbykey()   - cat1 cat2 dog1
+ 
+rdd.join(rdd2) //birleştirme
+	.cogroup()
+	
+(,5)number ile worker çalışması verilebilir
+
+
+
+

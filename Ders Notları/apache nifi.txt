@@ -1,0 +1,21 @@
+apache nifi
+-niegara files
+
+temel 2 işi yapar
+1. hadoop cluster dışındaki verileride cluster içine aktarma
+2. veri akışını düzenleyip verileri optimize etmek
+
+iot-sensör - ilişkisel veri tabanı-log-vb. dataları alabilir
+
+-Nifi, çok çeşitli veri kaynakları ve formatlarıyla başa çıkabilir. Verileri tek bir kaynaktan alıp,
+dönüştürüp, farklı bir veri havuzuna gönderme imkanı sunar.
+-web tabanlı kullanıcı arayüzüne sahip
+-veri akışını önceklendirilebilir
+-güvenli ssl,ssh,https,şifreli içerikl ve daha falzaasını destekler
+
+
+
+kurulum apache nifidan ubuntu için indir tar dosyasını çıkart sonra bin dosyasının içinde
+./nifi.sh start de başlar 
+hata1: java export home yapılmalı (exho $JAVA_HOME boş ise kanıtı)
+sonra conf/nifi.properites dosyası nano ile açılır adress 127.0.0.1:8080/nifi ise girilir ve boom

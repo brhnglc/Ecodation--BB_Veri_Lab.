@@ -1,0 +1,20 @@
+centos bir işletim sistemi
+
+hdfs dfs -mkdir /bigdatacourse
+hdfs dfs -copyfrom local dosya_url /bigdatacourse
+hdfs dfs -count /bigdatacourse
+hdfs dfs -cat /bigdatacourse/Rating.csv  //dosyası açma 
+hdfs dfs -cp /kopyalanacak url /kopyanılan yerler //kopyalama
+hdfs dfs -rm -r /url //silme
+hdfs dfs -mv /url //taşıma
+hdfs dfs -ls /url //ls komutu
+hdfs dfs -chmod +x /user/Ratings.csv //izin değiştirme
+hdfs dfs -setrep (sayi) /url //replication değiştirme kaç clusterda çalıştırılcak
+
+
+hue->hive
+-sql sorguları
+-bigdata içim mapreduce develop sistemi
+-sql sorgusu atıyorsun ama arakada mapreduce çalışıyor hızlı oluyor 
+-terminalde -hive diyip -sql sorgusunu orada da atabiliriz
+
